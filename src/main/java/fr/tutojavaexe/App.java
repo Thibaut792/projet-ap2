@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /*
- * Hello world!
- */
+  Hello world!
+*/
 
 public final class App {
     private App() {
@@ -21,13 +21,13 @@ public final class App {
      */
     public static void main(String[] args) throws SQLException {
         /* Connexion à la base de données */
-        String url = "jdbc:mysql://localhost:3306/ProjetAP1";
-        String utilisateur = "mon";
-        String motDePasse = "AZERTY";
+        String url = "jdbc:mysql://127.0.0.1:3306/newschema";
+        String utilisateur = "root";
+        String motDePasse = "Simon59300sql";
         Connection connexion = null;
 
         try {
-            connexion = DriverManager.getConnection(url, motDePasse, utilisateur);
+            connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
             System.out.println("conn ok");
             /*
              * Ici, nous placerons nos requêtes vers la BDD / ...
@@ -36,7 +36,7 @@ public final class App {
         } catch (SQLException e) {
 
             /* Gérer les éventuelles erreurs ici */
-            
+            System.out.println(e.getMessage());
             System.out.println("erreur conn");
 
         } finally {
