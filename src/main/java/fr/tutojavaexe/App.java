@@ -36,6 +36,7 @@ public final class App {
         } catch (SQLException e) {
 
             /* Gérer les éventuelles erreurs ici */
+            
             System.out.println("erreur conn");
 
         } finally {
